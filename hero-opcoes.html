@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Travessia · Hero · 3 opções de mockup</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100&family=Manrope:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="styles.css?v=64" />
+
+<style>
+  /* ============================================================
+     Página comparativa: 3 hero stacks pra escolha
+     ============================================================ */
+  body { background: #f6f1e8; }
+
+  .compare-page { padding: 24px 0 80px; }
+
+  .compare-page__intro {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 32px 24px 0;
+    font-family: var(--sans);
+  }
+
+  .compare-page__intro h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: var(--bg-deep);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .compare-page__intro p {
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 60ch;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .compare-label {
+    max-width: 1240px;
+    margin: 64px auto 16px;
+    padding: 0 24px;
+  }
+
+  .compare-label__tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    background: rgba(184, 146, 74, 0.10);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  .compare-label__title {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--bg-deep);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============================================================
+     Hero compartilhado (estrutura comum)
+     ============================================================ */
+  .compare-hero {
+    padding: 60px 32px 72px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    max-width: 1240px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .compare-hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .compare-hero__copy h1 {
+    font-family: var(--display);
+    font-size: clamp(2.2rem, 3.6vw, 2.9rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--bg-deep);
+    margin: 0 0 28px;
+  }
+
+  .compare-hero__copy h1 .line-1 { display: block; }
+  .compare-hero__copy h1 .line-2 { display: block; font-weight: 400; }
+  .compare-hero__copy h1 .line-3 {
+    display: block;
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 300;
+  }
+
+  .compare-hero__copy .lede-1 {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 16px;
+    max-width: 50ch;
+  }
+
+  .compare-hero__copy .lede-1 b {
+    font-size: 1.18em;
+    font-weight: 600;
+    color: var(--gold-deep);
+    font-style: normal;
+  }
+
+  .compare-hero__copy .lede-2 {
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+    max-width: 48ch;
+  }
+
+  .compare-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 26px;
+    background: var(--gold-deep);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .compare-hero__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(140, 107, 42, 0.28);
+  }
+
+  .compare-hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+  }
+
+  .compare-hero__stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(184, 146, 74, 0.18);
+    flex-wrap: wrap;
+  }
+
+  .compare-hero__stat-num {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--bg-deep);
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+  }
+
+  .compare-hero__stat-label {
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+    display: block;
+  }
+
+  /* ============================================================
+     OPÇÃO A · 1 MacBook grande dominante
+     ============================================================ */
+  .compare-hero--a .compare-hero__media {
+    display: grid;
+    place-items: center;
+  }
+
+  .opt-a-macbook {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .opt-a-macbook__screen {
+    background: #1a1a1a;
+    padding: 14px 14px 18px;
+    border-radius: 12px 12px 4px 4px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 24px 52px rgba(30, 36, 24, 0.22), 0 6px 14px rgba(30, 36, 24, 0.12);
+    width: 100%;
+  }
+
+  .opt-a-macbook__screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .opt-a-macbook__base {
+    width: 110%;
+    max-width: 640px;
+    height: 16px;
+    background: linear-gradient(180deg, #d4d4d4 0%, #b8b8b8 50%, #888 100%);
+    border-radius: 0 0 14px 14px;
+    position: relative;
+    box-shadow: 0 8px 18px rgba(30, 36, 24, 0.18);
+  }
+
+  .opt-a-macbook__base::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 6px;
+    background: #888;
+    border-radius: 0 0 8px 8px;
+  }
+
+  /* ============================================================
+     OPÇÃO B · Cascata de 4 mini-mockups
+     ============================================================ */
+  .compare-hero--b .compare-hero__media {
+    position: relative;
+    height: 540px;
+  }
+
+  .opt-b-card {
+    position: absolute;
+    width: 280px;
+    border-radius: 12px;
+    overflow: visible;
+    background: transparent;
+    transition: transform 0.3s ease;
+  }
+
+  .opt-b-card__frame {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(30, 36, 24, 0.20), 0 4px 10px rgba(30, 36, 24, 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .opt-b-card:hover {
+    transform: translateY(-6px) rotate(0) !important;
+    z-index: 10;
+  }
+
+  .opt-b-card:hover .opt-b-card__frame {
+    box-shadow: 0 24px 48px rgba(30, 36, 24, 0.24);
+  }
+
+  .opt-b-card__caption {
+    margin-top: 10px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 500;
+  }
+
+  .opt-b-card__caption-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 6px;
+    text-transform: none;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+  }
+
+  .opt-b-card__bar {
+    height: 22px;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 5px;
+  }
+
+  .opt-b-card__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  .opt-b-card__dot:nth-child(1) { background: #fc615d; }
+  .opt-b-card__dot:nth-child(2) { background: #fdbe40; }
+  .opt-b-card__dot:nth-child(3) { background: #34c84a; }
+
+  .opt-b-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .opt-b-card__label {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: var(--gold-deep);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(140, 107, 42, 0.5);
+  }
+
+  .opt-b-card--1 { top: 0; left: 4%; transform: rotate(-3deg); z-index: 4; }
+  .opt-b-card--2 { top: 100px; left: 32%; transform: rotate(2deg); z-index: 3; }
+  .opt-b-card--3 { top: 220px; left: 6%; transform: rotate(-2deg); z-index: 2; }
+  .opt-b-card--4 { top: 320px; left: 32%; transform: rotate(3deg); z-index: 1; }
+
+  /* ============================================================
+     OPÇÃO C · Mapa central + 3 chips orbitando
+     ============================================================ */
+  .compare-hero--c .compare-hero__media {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 460px;
+  }
+
+  .opt-c-center {
+    width: 88%;
+    max-width: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 24px 52px rgba(30, 36, 24, 0.22), 0 6px 14px rgba(30, 36, 24, 0.10);
+    position: relative;
+    z-index: 2;
+  }
+
+  .opt-c-center__bar {
+    height: 28px;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+  }
+
+  .opt-c-center__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  .opt-c-center__dot:nth-child(1) { background: #fc615d; }
+  .opt-c-center__dot:nth-child(2) { background: #fdbe40; }
+  .opt-c-center__dot:nth-child(3) { background: #34c84a; }
+
+  .opt-c-center img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .opt-c-chip {
+    position: absolute;
+    width: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 14px 32px rgba(30, 36, 24, 0.22);
+    z-index: 3;
+    transition: transform 0.3s ease;
+  }
+
+  .opt-c-chip:hover {
+    transform: rotate(0) translateY(-4px) !important;
+  }
+
+  .opt-c-chip img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .opt-c-chip--tl {
+    top: 4%;
+    left: -2%;
+    transform: rotate(-5deg);
+  }
+
+  .opt-c-chip--tr {
+    top: 22%;
+    right: -4%;
+    transform: rotate(5deg);
+  }
+
+  .opt-c-chip--br {
+    bottom: 4%;
+    right: 0%;
+    transform: rotate(3deg);
+  }
+
+  /* ============================================================
+     Mobile responsive
+     ============================================================ */
+  @media (max-width: 880px) {
+    .compare-hero { padding: 40px 20px 56px; }
+    .compare-hero__grid { grid-template-columns: 1fr; gap: 36px; }
+    .compare-hero__copy h1 { font-size: 1.85rem; }
+
+    .compare-hero--b .compare-hero__media { height: 440px; }
+    .opt-b-card { width: 220px; }
+    .opt-b-card--1 { left: 0%; }
+    .opt-b-card--2 { left: 30%; }
+    .opt-b-card--3 { left: 0%; }
+    .opt-b-card--4 { left: 30%; }
+
+    .opt-c-chip { width: 110px; }
+    .opt-c-chip--tl { left: -8%; top: 0; }
+    .opt-c-chip--tr { right: -8%; }
+    .opt-c-chip--br { right: -4%; }
+  }
+
+  @media (max-width: 540px) {
+    .opt-c-chip { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<main class="compare-page">
+
+  <header class="compare-page__intro">
+    <h1>Hero · 3 opções de mockup</h1>
+    <p>Mesma copy, mesmo CTA, mesmas estatísticas. A diferença é só o tratamento visual da área de mídia. Role pra ver as três e me diga qual vibe melhor pro seu público.</p>
+  </header>
+
+  <!-- ============================================
+       OPÇÃO A · 1 MacBook grande
+  ============================================ -->
+  <div class="compare-label">
+    <span class="compare-label__tag">Opção A</span>
+    <h2 class="compare-label__title">1 mockup principal · MacBook grande</h2>
+  </div>
+
+  <section class="compare-hero compare-hero--a">
+    <div class="compare-hero__grid">
+      <div class="compare-hero__copy">
+        <h1>
+          <span class="line-1">Seu dinheiro vai sobrar.</span>
+          <span class="line-2">Vai ter destino certo.</span>
+          <span class="line-3">E vai trabalhar por você.</span>
+        </h1>
+        <p class="lede-1">Tem uma sequência: primeiro você <b>enxerga</b> pra onde ele tá indo, aí ele começa a <b>sobrar</b>, depois você <b>direciona</b> pra cada objetivo da sua vida, e só então ele começa a <b>render</b>.</p>
+        <p class="lede-2">Sem cortar nada que importa, com ferramentas prontas que fazem metade do trabalho por você.</p>
+        <a href="#" class="compare-hero__cta">Quero ver pra onde meu dinheiro tá indo →</a>
+        <div class="compare-hero__meta">
+          🛡 Diagnóstico em 24 horas · 7 dias de garantia
+        </div>
+        <div class="compare-hero__stats">
+          <div><span class="compare-hero__stat-num">+200</span><span class="compare-hero__stat-label">famílias</span></div>
+          <div><span class="compare-hero__stat-num">+R$10M</span><span class="compare-hero__stat-label">destravado</span></div>
+          <div><span class="compare-hero__stat-num">Top 50</span><span class="compare-hero__stat-label">InfoMoney 2025</span></div>
+        </div>
+      </div>
+      <div class="compare-hero__media">
+        <div class="opt-a-macbook">
+          <div class="opt-a-macbook__screen">
+            <img src="assets/Mapa travessia.jpeg" alt="Mapa da Travessia · painel principal" />
+          </div>
+          <div class="opt-a-macbook__base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OPÇÃO B · Cascata de 4 mini-mockups
+  ============================================ -->
+  <div class="compare-label">
+    <span class="compare-label__tag">Opção B</span>
+    <h2 class="compare-label__title">Cascata de 4 mini-mockups em escada</h2>
+  </div>
+
+  <section class="compare-hero compare-hero--b">
+    <div class="compare-hero__grid">
+      <div class="compare-hero__copy">
+        <h1>
+          <span class="line-1">Seu dinheiro vai sobrar.</span>
+          <span class="line-2">Vai ter destino certo.</span>
+          <span class="line-3">E vai trabalhar por você.</span>
+        </h1>
+        <p class="lede-1">Tem uma sequência: primeiro você <b>enxerga</b> pra onde ele tá indo, aí ele começa a <b>sobrar</b>, depois você <b>direciona</b> pra cada objetivo da sua vida, e só então ele começa a <b>render</b>.</p>
+        <p class="lede-2">Sem cortar nada que importa, com ferramentas prontas que fazem metade do trabalho por você.</p>
+        <a href="#" class="compare-hero__cta">Quero ver pra onde meu dinheiro tá indo →</a>
+        <div class="compare-hero__meta">
+          🛡 Diagnóstico em 24 horas · 7 dias de garantia
+        </div>
+        <div class="compare-hero__stats">
+          <div><span class="compare-hero__stat-num">+200</span><span class="compare-hero__stat-label">famílias</span></div>
+          <div><span class="compare-hero__stat-num">+R$10M</span><span class="compare-hero__stat-label">destravado</span></div>
+          <div><span class="compare-hero__stat-num">Top 50</span><span class="compare-hero__stat-label">InfoMoney 2025</span></div>
+        </div>
+      </div>
+      <div class="compare-hero__media">
+        <div class="opt-b-card opt-b-card--1">
+          <div class="opt-b-card__frame">
+            <div class="opt-b-card__bar">
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+            </div>
+            <img src="assets/saidas.jpeg" alt="Saídas" />
+          </div>
+          <div class="opt-b-card__caption"><span class="opt-b-card__caption-num">01</span>Enxergar</div>
+        </div>
+        <div class="opt-b-card opt-b-card--2">
+          <div class="opt-b-card__frame">
+            <div class="opt-b-card__bar">
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+            </div>
+            <img src="assets/orçamento.jpeg" alt="Orçamento" />
+          </div>
+          <div class="opt-b-card__caption"><span class="opt-b-card__caption-num">02</span>Sobrar</div>
+        </div>
+        <div class="opt-b-card opt-b-card--3">
+          <div class="opt-b-card__frame">
+            <div class="opt-b-card__bar">
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+            </div>
+            <img src="assets/objetivos.jpeg" alt="Objetivos" />
+          </div>
+          <div class="opt-b-card__caption"><span class="opt-b-card__caption-num">03</span>Direcionar</div>
+        </div>
+        <div class="opt-b-card opt-b-card--4">
+          <div class="opt-b-card__frame">
+            <div class="opt-b-card__bar">
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+              <span class="opt-b-card__dot"></span>
+            </div>
+            <img src="assets/patrimonio.jpeg" alt="Patrimônio" />
+          </div>
+          <div class="opt-b-card__caption"><span class="opt-b-card__caption-num">04</span>Render</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       OPÇÃO C · Mapa central + 3 chips orbitando
+  ============================================ -->
+  <div class="compare-label">
+    <span class="compare-label__tag">Opção C</span>
+    <h2 class="compare-label__title">Mapa central + 3 chips orbitando</h2>
+  </div>
+
+  <section class="compare-hero compare-hero--c">
+    <div class="compare-hero__grid">
+      <div class="compare-hero__copy">
+        <h1>
+          <span class="line-1">Seu dinheiro vai sobrar.</span>
+          <span class="line-2">Vai ter destino certo.</span>
+          <span class="line-3">E vai trabalhar por você.</span>
+        </h1>
+        <p class="lede-1">Tem uma sequência: primeiro você <b>enxerga</b> pra onde ele tá indo, aí ele começa a <b>sobrar</b>, depois você <b>direciona</b> pra cada objetivo da sua vida, e só então ele começa a <b>render</b>.</p>
+        <p class="lede-2">Sem cortar nada que importa, com ferramentas prontas que fazem metade do trabalho por você.</p>
+        <a href="#" class="compare-hero__cta">Quero ver pra onde meu dinheiro tá indo →</a>
+        <div class="compare-hero__meta">
+          🛡 Diagnóstico em 24 horas · 7 dias de garantia
+        </div>
+        <div class="compare-hero__stats">
+          <div><span class="compare-hero__stat-num">+200</span><span class="compare-hero__stat-label">famílias</span></div>
+          <div><span class="compare-hero__stat-num">+R$10M</span><span class="compare-hero__stat-label">destravado</span></div>
+          <div><span class="compare-hero__stat-num">Top 50</span><span class="compare-hero__stat-label">InfoMoney 2025</span></div>
+        </div>
+      </div>
+      <div class="compare-hero__media">
+        <div class="opt-c-center">
+          <div class="opt-c-center__bar">
+            <span class="opt-c-center__dot"></span>
+            <span class="opt-c-center__dot"></span>
+            <span class="opt-c-center__dot"></span>
+          </div>
+          <img src="assets/Mapa travessia.jpeg" alt="Mapa da Travessia · painel principal" />
+        </div>
+        <div class="opt-c-chip opt-c-chip--tl">
+          <img src="assets/saidas.jpeg" alt="Saídas" />
+        </div>
+        <div class="opt-c-chip opt-c-chip--tr">
+          <img src="assets/objetivos.jpeg" alt="Objetivos" />
+        </div>
+        <div class="opt-c-chip opt-c-chip--br">
+          <img src="assets/patrimonio.jpeg" alt="Patrimônio" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
