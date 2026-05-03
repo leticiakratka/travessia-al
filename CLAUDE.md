@@ -4,7 +4,7 @@
 **Método Travessia**, curso online + ferramentas de execução + comunidade ao vivo.
 Voltado para quem ganha bem (R$7k–R$50k+/mês) mas não vê patrimônio crescer.
 
-**Preço:** R$697 à vista ou 12x R$69,90 | **Acesso:** 12 meses | **Garantia:** 7 dias
+**Preço:** R$497 à vista ou 12x R$49,70 | **Acesso:** 12 meses | **Garantia:** 7 dias
 
 ## Tom de voz
 Antes de escrever, editar ou revisar qualquer copy da landing (ou qualquer texto voltado ao avatar), consulte obrigatoriamente [TOM.md](TOM.md).

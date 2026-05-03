@@ -6427,6 +6427,35 @@ section {
   line-height: 1.1;
 }
 .last-call h2 em { color: var(--gold-2); font-style: italic; }
+.last-call__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 36px;
+  max-width: 30ch;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: #f5e9cf;
+  text-align: center;
+  font-style: italic;
+}
+.last-call__list li {
+  position: relative;
+  padding: 8px 0;
+  border-top: 1px solid rgba(212,176,114,0.18);
+}
+.last-call__list li:first-child { border-top: none; }
+.last-call__list li em { color: var(--gold-2); font-style: italic; }
+.last-call__body {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(245,233,207,0.78);
+  max-width: 56ch;
+  margin: 0 auto 40px;
+  line-height: 1.55;
+}
 .last-call__sub {
   font-family: var(--sans); font-style: italic;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
@@ -6476,4 +6505,385 @@ section {
   h2 { font-size: 30px; line-height: 1.15; }
   h3 { font-size: 20px; }
   body, p, li { font-size: 16px; }
+}
+
+/* =========================================================
+   COPY V3 · adições estruturais
+   Hero eyebrow, lede accent
+   D02 sintomas
+   D03 checklist, quotes
+   D05 Big Idea
+   D06 Existe uma ordem
+   "Na prática" rotina
+   D15 Objeções
+   ========================================================= */
+
+/* Hero eyebrow + lede accent */
+.hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 24px;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: var(--gold-deep);
+}
+.hero__lede--accent {
+  font-style: italic;
+  color: var(--bg-deep);
+  border-left: 2px solid var(--gold-2);
+  padding-left: 16px;
+  margin-top: 18px;
+}
+.hero__lede--accent em {
+  font-style: italic;
+  color: var(--gold-deep);
+}
+
+/* D02 — pergunta âncora "Render pra quê?" */
+.dossie__problema-title--pergunta {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  text-align: center;
+  margin: 0 auto 28px;
+  color: var(--bg-deep);
+}
+.dossie__problema-title--pergunta em {
+  color: var(--gold-deep);
+  font-style: italic;
+}
+
+/* D02 — lista de sintomas */
+.dossie__sintomas {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dossie__sintomas li {
+  position: relative;
+  padding-left: 24px;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+.dossie__sintomas li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 12px;
+  height: 1px;
+  background: var(--gold);
+}
+.dossie__sintomas li em {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+.dossie__sintomas li strong {
+  color: var(--bg-deeper);
+  font-weight: 600;
+}
+
+/* D02 — callout detail */
+.dossie__problema-callout-detail {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+/* D03 — checklist de identificação */
+.virada__checklist {
+  background: var(--bg-2);
+  border: 1px solid rgba(184,146,74,0.18);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin: 36px 0;
+}
+.virada__checklist-lead {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--bg-deep);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.virada__checklist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.virada__checklist li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.5;
+}
+.virada__checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--gold);
+  border-radius: 3px;
+}
+.virada__checklist-close {
+  margin: 0;
+  font-style: italic;
+  color: var(--gold-deep);
+  font-size: 0.95rem;
+}
+
+/* D03 — bloco de citações de pesquisa */
+.virada__quotes {
+  margin: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.virada__quotes blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.4;
+  color: var(--bg-deep);
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-left: 2px solid var(--gold-2);
+}
+.virada__quotes blockquote em {
+  font-style: italic;
+}
+
+/* D05 — Big Idea */
+.bigidea {
+  background: var(--bg-2);
+  padding: 120px 0;
+  text-align: center;
+  border-top: 1px solid rgba(184,146,74,0.12);
+  border-bottom: 1px solid rgba(184,146,74,0.12);
+}
+.bigidea__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.bigidea__title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  color: var(--bg-deep);
+  margin: 24px 0 36px;
+}
+.bigidea__title-soft {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: var(--ink-muted);
+}
+.bigidea__punch {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  color: var(--gold-deep);
+  font-style: italic;
+  margin: 0 auto 40px;
+  max-width: 30ch;
+}
+.bigidea__body {
+  text-align: left;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+.bigidea__body p {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.bigidea__close {
+  font-family: var(--serif);
+  text-align: center;
+  margin-top: 28px !important;
+  color: var(--bg-deep);
+}
+
+/* D06 — Existe uma ordem */
+.ordem {
+  padding: 120px 0 100px;
+  background: var(--bg);
+}
+.ordem__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ordem__title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  color: var(--bg-deep);
+  margin: 20px 0 28px;
+}
+.ordem__sequence {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--bg-deep);
+  margin: 0 auto 36px;
+  max-width: 48ch;
+}
+.ordem__sequence strong {
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+.ordem__body {
+  text-align: left;
+  max-width: 56ch;
+  margin: 0 auto 36px;
+}
+.ordem__body p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.ordem__inversao {
+  background: var(--bg-2);
+  border-radius: 10px;
+  padding: 28px 32px;
+  text-align: left;
+  max-width: 56ch;
+  margin: 0 auto 28px;
+}
+.ordem__inversao-lead {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--bg-deep);
+  margin: 0 0 14px;
+}
+.ordem__inversao ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ordem__inversao li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.ordem__inversao li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gold);
+  font-weight: 600;
+}
+.ordem__inversao-result {
+  margin: 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+.ordem__close {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--bg-deep);
+  margin: 0 auto;
+  max-width: 40ch;
+}
+.ordem__close em {
+  color: var(--gold-deep);
+  font-style: italic;
+}
+
+/* "Na prática" — rotina */
+.rotina {
+  margin: 60px auto;
+  padding: 36px 32px;
+  max-width: 620px;
+  text-align: center;
+  background: var(--bg-2);
+  border-radius: 10px;
+  border: 1px solid rgba(184,146,74,0.16);
+}
+.rotina__text {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 16px 0 14px;
+}
+.rotina__punch {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-style: italic;
+  color: var(--gold-deep);
+  margin: 0;
+}
+
+/* D15 — Quebra de objeções */
+.objecoes {
+  padding: 100px 0;
+  background: var(--bg);
+}
+.objecoes__head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+.objecoes__title {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  color: var(--bg-deep);
+  margin-top: 16px;
+}
+.objecoes__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.objecao {
+  background: var(--bg-2);
+  border-radius: 10px;
+  border: 1px solid rgba(184,146,74,0.14);
+  padding: 32px 36px;
+}
+.objecao__quote {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: var(--gold-deep);
+  margin: 0 0 18px;
+  line-height: 1.35;
+}
+.objecao p {
+  font-size: clamp(1rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.objecao p:last-child { margin-bottom: 0; }
+.objecao__close {
+  color: var(--bg-deep) !important;
+  font-style: italic;
+}
+.objecao__close em {
+  font-style: italic;
+}
+.objecao__close strong {
+  color: var(--bg-deeper);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .bigidea, .ordem, .objecoes { padding: 80px 0; }
+  .virada__checklist, .ordem__inversao, .objecao { padding: 24px 22px; }
+  .rotina { padding: 28px 22px; margin: 48px auto; }
+  .dossie__problema-title--pergunta { font-size: 38px; }
 }
