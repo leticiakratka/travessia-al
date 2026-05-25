@@ -442,3 +442,47 @@ document.querySelectorAll('.faq-item').forEach((item) => {
     a.style.maxHeight = open ? a.scrollHeight + 'px' : '0px';
   });
 });
+
+// ============ UTM forwarding pro checkout ============
+// Captura parâmetros de tracking (utm_*, gclid, fbclid, ttclid) da URL atual,
+// persiste em sessionStorage e injeta nos links pro checkout (data-checkout
+// ou qualquer link pra pay.voompcreators.com.br).
+(function forwardTrackingParams() {
+  const TRACKING_KEYS = [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+    'utm_id', 'gclid', 'fbclid', 'ttclid', 'msclkid', 'src', 'sck'
+  ];
+  const STORAGE_KEY = 'travessia_tracking';
+
+  // 1. Lê params da URL atual e mescla com o que já tava em sessionStorage
+  const urlParams = new URLSearchParams(window.location.search);
+  let stored = {};
+  try {
+    stored = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+  } catch (e) { stored = {}; }
+
+  const tracking = { ...stored };
+  let hasNew = false;
+  TRACKING_KEYS.forEach((key) => {
+    const value = urlParams.get(key);
+    if (value) { tracking[key] = value; hasNew = true; }
+  });
+
+  if (hasNew) {
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(tracking)); } catch (e) {}
+  }
+
+  // 2. Se não tem nada pra propagar, sai
+  const entries = Object.entries(tracking);
+  if (entries.length === 0) return;
+
+  // 3. Injeta nos links de checkout
+  const selector = 'a[data-checkout], a[href*="pay.voompcreators.com.br"]';
+  document.querySelectorAll(selector).forEach((a) => {
+    try {
+      const url = new URL(a.href, window.location.origin);
+      entries.forEach(([k, v]) => url.searchParams.set(k, v));
+      a.href = url.toString();
+    } catch (e) {}
+  });
+})();
