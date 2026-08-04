@@ -7826,3 +7826,12 @@ section {
   .rotina { padding: 28px 22px; margin: 48px auto; }
   .dossie__problema-title--pergunta { font-size: 38px; }
 }
+
+/* ==================================================================
+   CTAs ocultos · 04/08/2026
+   Botao "Entrar no Travessia" (header) e bloco de CTA do hero
+   ("Quero entrar no Travessia" + selo de acesso/garantia).
+   Pra reexibir, basta apagar este bloco.
+================================================================== */
+.nav__cta,
+.hero__ctas { display: none !important; }
